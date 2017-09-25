@@ -791,7 +791,7 @@ public class compras extends javax.swing.JInternalFrame {
             lblcantidadp.setText("Cantidad:");
             lblcantidadp.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
             jcMousePanel6.add(lblcantidadp);
-            lblcantidadp.setBounds(10, 150, 90, 20);
+            lblcantidadp.setBounds(290, 150, 90, 20);
 
             factura.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
             jcMousePanel6.add(factura);
@@ -807,17 +807,22 @@ public class compras extends javax.swing.JInternalFrame {
 
             lblprecio.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
             lblprecio.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-            lblprecio.setText("Precio Unitario:");
+            lblprecio.setText("Precio:");
             jcMousePanel6.add(lblprecio);
-            lblprecio.setBounds(280, 150, 128, 30);
+            lblprecio.setBounds(0, 150, 100, 20);
 
             precios.setEditable(false);
             preciocompra.setEditable(false);
             preciocompra.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
             preciocompra.setHorizontalAlignment(javax.swing.JTextField.CENTER);
             preciocompra.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+            preciocompra.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    preciocompraActionPerformed(evt);
+                }
+            });
             jcMousePanel6.add(preciocompra);
-            preciocompra.setBounds(410, 150, 125, 25);
+            preciocompra.setBounds(110, 150, 130, 25);
 
             bntSalir.setBackground(new java.awt.Color(153, 153, 153));
             bntSalir.setText("...");
@@ -867,7 +872,7 @@ public class compras extends javax.swing.JInternalFrame {
                 }
             });
             jcMousePanel6.add(cantidadP);
-            cantidadP.setBounds(110, 150, 150, 23);
+            cantidadP.setBounds(385, 150, 150, 23);
 
             btncrearproducto.setBackground(new java.awt.Color(153, 153, 153));
             btncrearproducto.setText("Crear Producto");
@@ -901,7 +906,7 @@ public class compras extends javax.swing.JInternalFrame {
             jcMousePanel6.add(totalcompra);
             totalcompra.setBounds(735, 115, 130, 60);
 
-            fechaactual.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+            fechaactual.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
             fechaactual.setName("fecha"); // NOI18N
             jcMousePanel6.add(fechaactual);
             fechaactual.setBounds(660, 10, 200, 25);
@@ -965,6 +970,7 @@ public class compras extends javax.swing.JInternalFrame {
                 tabladetallecompra.setName(""); // NOI18N
                 tabladetallecompra.setRowHeight(24);
                 jScrollPanedetallecompra.setViewportView(tabladetallecompra);
+                tabladetallecompra.getTableHeader().setReorderingAllowed(false) ;
 
                 javax.swing.GroupLayout jcMousePanel7Layout = new javax.swing.GroupLayout(jcMousePanel7);
                 jcMousePanel7.setLayout(jcMousePanel7Layout);
@@ -1258,6 +1264,7 @@ public class compras extends javax.swing.JInternalFrame {
                     preciocompra.setText("" + rs.getString("producto.preciocompra"));
                     txtcod.setText("" + rs.getString("producto.codigo"));
                     cantidadP.setEditable(true);
+                    preciocompra.setEditable(true);
                     cantidadP.requestFocus();
                     cantidadP.selectAll();
                 } else {
@@ -1621,6 +1628,7 @@ public class compras extends javax.swing.JInternalFrame {
                         }
                         totalcompra.setText("" + Math.round(Resultado * 100.0) / 100.0);
                         cantidadP.setEditable(false);
+                        preciocompra.setEditable(false);
                         borrar();
                         codigo.requestFocus();
                     }
@@ -1686,6 +1694,11 @@ public class compras extends javax.swing.JInternalFrame {
         removejtable2();
         this.preciosn.dispose();
     }//GEN-LAST:event_preciosnWindowClosing
+
+    private void preciocompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_preciocompraActionPerformed
+        // TODO add your handling code here:
+        cantidadP.requestFocus();
+    }//GEN-LAST:event_preciocompraActionPerformed
 
     public void eliminar() {
         int resp;

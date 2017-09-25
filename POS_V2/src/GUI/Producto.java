@@ -42,7 +42,7 @@ public class Producto extends javax.swing.JInternalFrame {
     DefaultTableModel model;
     Connection conn;//getConnection intentara establecer una conexión.
     Statement sent;
-    String[] titulos = {"id", "Codigo", "Nombre", "Categoria", "PrecioC", "PrecioV", "Stock Min", "Unidad", "Existencia" /*"Fecha", "Estado", "Marca"*/};
+    String[] titulos = {"id", "Codigo", "Nombre", "Categoria", "PrecioC", "PrecioV", "Stock.Min", "Unidad", "Stock" /*"Fecha", "Estado", "Marca"*/};
 
     /**
      * Creates new form Productos
@@ -328,6 +328,9 @@ public class Producto extends javax.swing.JInternalFrame {
 
                 conn = BdConexion.getConexion();
                 Habilitar();
+                stock.setEnabled(false);
+                stock.setEditable(false);
+
                 conn = BdConexion.getConexion();
                 String sql = sqlprod.LLENAR + sqlprod.WHERE + sqlprod.ID + sqlprod.IGUAL + tproductos.getValueAt(fila, 0);
                 sent = conn.createStatement();
@@ -372,6 +375,10 @@ public class Producto extends javax.swing.JInternalFrame {
                 categoria.setEditable(false);
                 unidad.setEditable(false);
                 marca.setEditable(false);
+
+                stock.setEnabled(false);
+                stock.setEditable(false);
+
             } catch (SQLException e) {
                 JOptionPane.showInternalMessageDialog(this, "Error al cargar los datos", "Error BD", JOptionPane.ERROR_MESSAGE);
                 //System.out.print(e.getMessage());
@@ -767,7 +774,7 @@ public class Producto extends javax.swing.JInternalFrame {
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel15.setText("*Credito:");
+        jLabel15.setText("*Crédito:");
         jPanel2.add(jLabel15);
         jLabel15.setBounds(20, 50, 80, 20);
 
@@ -970,8 +977,8 @@ public class Producto extends javax.swing.JInternalFrame {
         Llenarcombos();
         Habilitar();
         nombre.requestFocus();
-        stock.setEnabled(true);
-        stock.setEditable(true);
+//        stock.setEnabled(false);
+//        stock.setEditable(false);
         this.bntGuardar.setEnabled(true);
         this.bntModificar.setEnabled(false);
         this.bntEliminar.setEnabled(false);
@@ -1100,11 +1107,12 @@ public class Producto extends javax.swing.JInternalFrame {
                     categoria.setEditable(true);
                     unidad.setEditable(true);
                     marca.setEditable(true);
-                    stock.setEnabled(false);
-                    stock.setEditable(false);
 
                     conn = BdConexion.getConexion();
                     Habilitar();
+                    //stock.setEnabled(false);
+                    stock.setEditable(false);
+
                     conn = BdConexion.getConexion();
                     String sql = sqlprod.LLENAR + sqlprod.WHERE + sqlprod.ID + sqlprod.IGUAL + tproductos.getValueAt(fila, 0);
                     sent = conn.createStatement();
@@ -1120,14 +1128,14 @@ public class Producto extends javax.swing.JInternalFrame {
                     pr = Integer.parseInt(hashunidad.get(rs.getString("unidad.nombre")));
                     this.unidad.setSelectedIndex(pr);
 
-                    precioC.setText(rs.getString("PrecioCompra"));
-                    precioV.setText(rs.getString("Precioventa"));
-                    precioCred.setText(rs.getString("preciocredito"));
-                    precioDist.setText(rs.getString("preciodistribuidor"));
-                    precioEsp.setText(rs.getString("precioespecial"));
+                    precioC.setValue(Float.parseFloat(rs.getString("PrecioCompra")));
+                    precioV.setValue(Float.parseFloat(rs.getString("Precioventa")));
+                    precioCred.setValue(Float.parseFloat(rs.getString("preciocredito")));
+                    precioDist.setValue(Float.parseFloat(rs.getString("preciodistribuidor")));
+                    precioEsp.setValue(Float.parseFloat(rs.getString("precioespecial")));
 
-                    stockMin.setText(rs.getString("Pivote"));
-                    stock.setText(rs.getString("cantidad"));
+                    stockMin.setValue(Float.parseFloat(rs.getString("Pivote")));
+                    stock.setValue(Float.parseFloat(rs.getString("cantidad")));
 
                     if (rs.getString("Estado").equals("T")) {
                         rbEstado.setSelected(true);

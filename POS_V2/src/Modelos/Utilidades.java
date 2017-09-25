@@ -438,6 +438,7 @@ public class Utilidades {
             column.setPreferredWidth(maxwidth);
         } // para columnas 
         table.setAutoCreateRowSorter(false);//para ordenar el Jtable al dar clic encima del titulo de la columna
+        table.getTableHeader().setReorderingAllowed(false) ;
     }
 
 }
