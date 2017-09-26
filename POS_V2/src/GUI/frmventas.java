@@ -181,7 +181,7 @@ public class frmventas extends javax.swing.JInternalFrame {
                 if (tablaventas.getRowCount() <= 0) {
                     dispose();
                 } else {
-                    JOptionPane.showMessageDialog(null, "No Puedes cerrar Tienes Ventas Pendientes");
+                    JOptionPane.showMessageDialog(null, "Tienes Ventas Pendientes, Cancela la venta si deseas cerrar esta ventana");
                 }
             }
         };
@@ -205,7 +205,7 @@ public class frmventas extends javax.swing.JInternalFrame {
                 value2.addElement(new formadepago(rs.getString("descripcion"), rs.getInt("dias"), "" + rs.getInt("idtipopago")));
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Ocurio un Error al cargar los datos\n" + ex.toString());
+            JOptionPane.showMessageDialog(null, "Ocurio un Error al cargar los datos \n" + ex.toString());
         }
     }
 
@@ -222,7 +222,7 @@ public class frmventas extends javax.swing.JInternalFrame {
                 }
                 rs.close();
             } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Ocurio un Error al cargar los datos\n" + ex.toString());
+                JOptionPane.showMessageDialog(null, "Ocurio un Error al cargar los datos \n" + ex.toString());
             }
 
         } else if (/*codigoproductos.getSelectedIndex() == 0*/busquedacompra.getText().isEmpty()) {
@@ -387,7 +387,7 @@ public class frmventas extends javax.swing.JInternalFrame {
         btnbusscar = new elaprendiz.gui.button.ButtonRect();
         btnbusscar1 = new elaprendiz.gui.button.ButtonRect();
 
-        cliente.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        cliente.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         cliente.setTitle("Cliente");
         cliente.setAlwaysOnTop(true);
         cliente.setBounds(new java.awt.Rectangle(0, 0, 724, 532));
@@ -1209,7 +1209,7 @@ public class frmventas extends javax.swing.JInternalFrame {
         precioscostos.setVisible(false);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons_menu/icons8-Búsqueda-25.png"))); // NOI18N
-        jButton1.setBorder(null);
+        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.setOpaque(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1231,21 +1231,24 @@ public class frmventas extends javax.swing.JInternalFrame {
                 .addGroup(jcMousePanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(nombrecliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(nittxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(fechainicial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(fechainicial, javax.swing.GroupLayout.DEFAULT_SIZE, 441, Short.MAX_VALUE))
                 .addGroup(jcMousePanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jcMousePanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(idcliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(idfac, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jcMousePanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jcMousePanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(direccion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(precioscostos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jcMousePanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(idproducto, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(tele, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jcMousePanel3Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addGroup(jcMousePanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(idcliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(idfac, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jcMousePanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jcMousePanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(direccion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(precioscostos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jcMousePanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(idproducto, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tele, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jcMousePanel3Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton1)))
                 .addContainerGap())
         );
         jcMousePanel3Layout.setVerticalGroup(
@@ -2451,7 +2454,7 @@ public class frmventas extends javax.swing.JInternalFrame {
                             //formapago.setEnabled(false);
                             // llenarcombo();
                         }
-//busquedacompra.selectAll();
+                        //busquedacompra.selectAll();
                     } catch (Exception ex) {
                         s.executeUpdate("UNLOCK TABLES;");
                         conn.rollback();
@@ -2492,7 +2495,7 @@ public class frmventas extends javax.swing.JInternalFrame {
         if (tablaventas.getRowCount() <= 0) {
             dispose();
         } else {
-            JOptionPane.showMessageDialog(null, "No Puedes cerrar Tienes Ventas Pendientes");
+            JOptionPane.showMessageDialog(null, "Tienes Ventas Pendientes, Cancela la venta si deseas cerrar esta ventana");
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
