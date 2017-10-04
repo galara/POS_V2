@@ -45,7 +45,7 @@ public class login extends javax.swing.JFrame {
         Calendar c2 = Calendar.getInstance();
         c2.set(2017, Calendar.OCTOBER, 31);
 
-        if (c.get(Calendar.YEAR) <= c2.get(Calendar.YEAR)) {
+        //if (c.get(Calendar.YEAR) <= c2.get(Calendar.YEAR)) {
 
             if (!this.txtUsuario.getText().trim().isEmpty() || !this.txtClave.getText().trim().isEmpty()) {
 
@@ -82,10 +82,10 @@ public class login extends javax.swing.JFrame {
                 String msg = "Ingrese un usuario y su contraseña";
                 mensaje(msg);
             }
-        } else {
-            JOptionPane.showMessageDialog(this, "El POS DEMO caducó, podrás utilizar el sistema hasta que compres tu licencia"
-                    + "\nporfavor contacta al Administrador ");
-        }
+//        } else {
+//            JOptionPane.showMessageDialog(this, "El POS DEMO caducó, podrás utilizar el sistema hasta que compres tu licencia"
+//                    + "\nporfavor contacta al Administrador ");
+//        }
     }
 
     /**
@@ -263,7 +263,7 @@ public class login extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
 
         jLabel6.setFont(new java.awt.Font("Decker", 0, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(153, 102, 0));
+        jLabel6.setForeground(java.awt.SystemColor.textHighlight);
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("\"TRIVET\" Centro Médico Veterinario");
 

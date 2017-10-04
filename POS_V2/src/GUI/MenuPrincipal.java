@@ -31,7 +31,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
         this.setIconImage(new ImageIcon(getClass().getResource("/fondo/Cajaregistradora-100.png")).getImage());
-        panel_center.setBorder(new ImagenFondo("/fondo/fondoprincipal.png"));
+        panel_center.setBorder(new ImagenFondo("/fondo/trivet.png"));
         activar();
     }
 
@@ -66,8 +66,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         m1 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        m25 = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
+        m24 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         m2 = new javax.swing.JMenuItem();
@@ -126,10 +127,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         usuarioactual.setForeground(java.awt.SystemColor.textHighlight);
         usuarioactual.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        jLabel2.setFont(new java.awt.Font("Decker", 1, 17)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Decker", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("JPOS V2.0-2017");
+        jLabel2.setText("\"TRIVET\"");
 
         javax.swing.GroupLayout panel_southLayout = new javax.swing.GroupLayout(panel_south);
         panel_south.setLayout(panel_southLayout);
@@ -171,14 +172,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         jMenu1.add(m1);
 
-        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons_menu/icons8-Copias de seguridad-32.png"))); // NOI18N
-        jMenuItem3.setText("Backup Database");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        m25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons_menu/icons8-Copias de seguridad-32.png"))); // NOI18N
+        m25.setText("Backup Database");
+        m25.setEnabled(false);
+        m25.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                m25ActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem3);
+        jMenu1.add(m25);
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons_menu/icons8-Cerrar ventana-32.png"))); // NOI18N
@@ -189,6 +191,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jMenuItem1);
+
+        m24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons_menu/icons8-Tarea del sistema Filled-32.png"))); // NOI18N
+        m24.setText("Empresa");
+        m24.setEnabled(false);
+        m24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                m24ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(m24);
 
         jMenuBar1.add(jMenu1);
 
@@ -543,6 +555,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
             while (rs.next()) {
                 if (rs.getString("menu").equals("0") && rs.getString("estado").equals("T")) {
                     m1.setEnabled(true);
+                    m24.setEnabled(true);
+                    m25.setEnabled(true);
                 }
                 if (rs.getString("menu").equals("1") && rs.getString("estado").equals("T")) {
                     m2.setEnabled(true);
@@ -811,14 +825,23 @@ public class MenuPrincipal extends javax.swing.JFrame {
         GeneraReportes.AbrirReporte(nombrereporte, null);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void m25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m25ActionPerformed
         // TODO add your handling code here:3
         Backup newfrm = new Backup();
         if (newfrm == null) {
             newfrm = new Backup();
         }
         AddForms.adminInternalFrame(panel_center, newfrm);
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_m25ActionPerformed
+
+    private void m24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m24ActionPerformed
+        // TODO add your handling code here:
+        Empresa newfrm = new Empresa();
+        if (newfrm == null) {
+            newfrm = new Empresa();
+        }
+        AddForms.adminInternalFrame(panel_center, newfrm);
+    }//GEN-LAST:event_m24ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -881,7 +904,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem21;
     private javax.swing.JMenuItem jMenuItem22;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem m1;
     private javax.swing.JMenuItem m10;
     private javax.swing.JMenuItem m11;
@@ -898,6 +920,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem m21;
     private javax.swing.JMenuItem m22;
     private javax.swing.JMenuItem m23;
+    private javax.swing.JMenuItem m24;
+    private javax.swing.JMenuItem m25;
     private javax.swing.JMenuItem m3;
     private javax.swing.JMenuItem m4;
     private javax.swing.JMenuItem m5;

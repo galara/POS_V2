@@ -56,8 +56,7 @@ public class acercade extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel13 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         panelCurves1 = new elaprendiz.gui.panel.PanelCurves();
         jLabel7 = new javax.swing.JLabel();
@@ -133,22 +132,15 @@ public class acercade extends javax.swing.JInternalFrame {
 
         jLabel13.setBackground(new java.awt.Color(0, 153, 204));
         jLabel13.setFont(new java.awt.Font("Decker", 3, 12)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(0, 102, 255));
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel13.setText("galaraa@gmail.com");
-        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, 160, 20));
+        jLabel13.setText("fernandoqjunco@gmail.com");
+        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 200, 20));
 
-        jLabel1.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
-        jLabel1.setForeground(java.awt.Color.red);
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel1.setText("final comuniquese con soporte técnico.");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 440, 20));
-
-        jLabel4.setFont(new java.awt.Font("Decker", 0, 14)); // NOI18N
-        jLabel4.setForeground(java.awt.Color.red);
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel4.setText("Esta es una versión con fines demostrativos, para obtener la versión ");
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 440, 20));
+        jLabel14.setBackground(new java.awt.Color(0, 153, 204));
+        jLabel14.setFont(new java.awt.Font("Decker", 3, 12)); // NOI18N
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel14.setText("galaraa@gmail.com");
+        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 160, 20));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondo/2012-7-9-123007.jpg"))); // NOI18N
@@ -216,11 +208,10 @@ public class acercade extends javax.swing.JInternalFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;

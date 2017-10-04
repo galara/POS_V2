@@ -30,16 +30,19 @@ public class BdConexion {
 //    public static String dataBase = "rubens";//nombre base de datos
 //    public static String user = "root"; // usuario de la base de datos
 //    public static String pass = "rdwLWVx9cWcyyPFe";
+    
 //    ***********otro************************************************
 //    private static String host = "localhost";//"192.168.0.20";
 //    public static String dataBase = "agrofatima";//"agrofatima2"; //nombre base de datos
 //    public static String user = "agropecuaria";//"agrofatima2"; // usuario de la base de datos
 //    public static String pass = /*"agrofatima2";//*/"rdwLWVx9cWcyyPFe"; 
-    //***********LOCAL  ************************************************
-    //private static String host = "localhost";
-    //public static String dataBase = "trivet2";//nombre base de datos
-    //public static String user = "root";// usuario de la base de datos
-    //public static String pass = "superprecios";
+    
+////    ***********LOCAL  ************************************************
+//    private static String host = "localhost";
+//    public static String dataBase = "trivet2";//nombre base de datos
+//    public static String user = "root";// usuario de la base de datos
+//    public static String pass = "superprecios";
+    
     public static int TODO = 1;
     public static int SOLO_STATEMENT = 2;
     public static int SOLO_RESULTSET = 3;
