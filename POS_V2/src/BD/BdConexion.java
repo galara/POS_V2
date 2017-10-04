@@ -18,30 +18,28 @@ public class BdConexion {
     private static ResultSet rs = null;
     private static Statement st = null;
     private static PreparedStatement ps = null;
-    //***********AGROFATIMA************************************************
-    //private static String host = "192.168.0.10";
-    //public static String dataBase = "agrofatima"; //nombre base de datos
-    //public static String user = "agropecuaria"; // usuario de la base de datos
-    //public static String pass = "rdwLWVx9cWcyyPFe"; // contraseña de la base de datos
-    
-//    //***********SAN MIGUEL************************************************
-    private static String host = "localhost";//"192.168.1.20";//"192.168.1.30";//"192.168.1.20";
-    public static String dataBase = "trivet2";//"agrofatima2"; //nombre base de datos
-    public static String user = /*"rubens";*/"root"; // usuario de la base de datos
-    public static String pass = "superprecios";//"rdwLWVx9cWcyyPFe";
-    
+
+    //***********TRIVET************************************************
+    private static String host = "192.168.1.20";
+    public static String dataBase = "trivet"; //nombre base de datos
+    public static String user = "trivet"; // usuario de la base de datos
+    public static String pass = "trivet"; // contraseña de la base de datos
+
+//    //***********RUBENS************************************************
+//    private static String host = "192.168.0.20";
+//    public static String dataBase = "rubens";//nombre base de datos
+//    public static String user = "root"; // usuario de la base de datos
+//    public static String pass = "rdwLWVx9cWcyyPFe";
 //    ***********otro************************************************
 //    private static String host = "localhost";//"192.168.0.20";
 //    public static String dataBase = "agrofatima";//"agrofatima2"; //nombre base de datos
 //    public static String user = "agropecuaria";//"agrofatima2"; // usuario de la base de datos
 //    public static String pass = /*"agrofatima2";//*/"rdwLWVx9cWcyyPFe"; 
-    
     //***********LOCAL  ************************************************
-    //private static String host = "localhost";//"192.168.0.20";
-    //public static String dataBase = "agrofatima";//"agrofatima2"; //nombre base de datos
-    //public static String user = "root";//"agrofatima2"; // usuario de la base de datos
-    //public static String pass = "adolfo123";//"rdwLWVx9cWcyyPFe"; 
-    
+    //private static String host = "localhost";
+    //public static String dataBase = "trivet2";//nombre base de datos
+    //public static String user = "root";// usuario de la base de datos
+    //public static String pass = "superprecios";
     public static int TODO = 1;
     public static int SOLO_STATEMENT = 2;
     public static int SOLO_RESULTSET = 3;
