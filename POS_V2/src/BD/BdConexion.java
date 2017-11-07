@@ -37,9 +37,9 @@ public class BdConexion {
 //    public static String user = "agropecuaria";//"agrofatima2"; // usuario de la base de datos
 //    public static String pass = /*"agrofatima2";//*/"rdwLWVx9cWcyyPFe"; 
     
-////    ***********LOCAL  ************************************************
+//    ***********LOCAL  ************************************************
 //    private static String host = "localhost";
-//    public static String dataBase = "trivet2";//nombre base de datos
+//    public static String dataBase = "trivet";//nombre base de datos
 //    public static String user = "root";// usuario de la base de datos
 //    public static String pass = "superprecios";
     
